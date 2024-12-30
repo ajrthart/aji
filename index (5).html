@@ -1,0 +1,89 @@
+<html>
+ <title>BAPE</title>
+<center>
+<h1> INI SEPATUNYA &#128513; </h1>
+</center>
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* Gaya untuk gambar kecil */
+    #gambarKlik {
+      width: 200px;
+      cursor: pointer;
+    }
+    
+    /* Gaya untuk modal (gambar besar) */
+    #modalGambar {
+      display: none; /* Awalnya disembunyikan */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7); /* Latar belakang gelap dengan transparansi */
+      justify-content: center;
+      align-items: center;
+    }
+
+    #modalGambar img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    #tutupModal {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Gambar yang dapat diklik -->
+
+1. <figure>
+         <img id="gambarKlik" src="BAPE 1.png" alt="Klik untuk lihat gambar besar" >
+        <figcaption>BAPE GOOSE</figcaption>
+    </figure>
+  <!-- Modal untuk menampilkan gambar besar -->
+  <div id="modalGambar">
+    <span id="tutupModal">&times;</span>
+    <img src="BAPE 1.png" alt="Gambar Besar">
+  </div>
+
+
+  <script>
+    // Mendapatkan elemen gambar kecil dan modal
+    var gambarKlik = document.getElementById("gambarKlik");
+    var modalGambar = document.getElementById("modalGambar");
+    var tutupModal = document.getElementById("tutupModal");
+
+    // Ketika gambar kecil diklik, tampilkan modal dengan gambar besar
+    gambarKlik.onclick = function() {
+      modalGambar.style.display = "flex"; // Menampilkan modal
+    }
+
+    // Ketika tombol tutup modal diklik, sembunyikan modal
+    tutupModal.onclick = function() {
+      modalGambar.style.display = "none"; // Menyembunyikan modal
+    }
+
+    // Ketika pengguna mengklik di luar gambar modal, sembunyikan modal
+    window.onclick = function(event) {
+      if (event.target === modalGambar) {
+        modalGambar.style.display = "none"; // Menyembunyikan modal jika mengklik di luar gambar
+      }
+    }
+  </script>
+
+</body>
+
+
+</html>
